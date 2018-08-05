@@ -48,7 +48,42 @@ body {
 .container {
 	width: 100%;
 	margin: 0 auto;
-	padding: 0 156px;
+}
+
+@media (max-width: 12560px) {
+	.container {
+		padding: 0 35%;
+	}
+}
+
+@media (max-width: 5119px) {
+	.container {
+		padding: 0 30%;
+	}
+}
+
+@media (max-width: 2559px) {
+	.container {
+		padding: 0 15%;
+	}
+}
+
+@media (max-width: 1439px) {
+	.container {
+		padding: 0 11.3%;
+	}
+}
+
+@media (max-width: 1200px) {
+	.container {
+		padding: 0 5%;
+	}
+}
+
+@media (max-width: 1023px) {
+	.container {
+		padding: 0 3%;
+	}
 }
 
 .inline {
