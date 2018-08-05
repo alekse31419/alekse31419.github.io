@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Блокпост</title>
+
+	<link rel="stylesheet" href="app/css/main.css"> <!-- main css -->
+	<link rel="stylesheet" href="app/owl-carousel/owl.carousel.css"> <!-- carousel -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- jquery -->
+	<script src="app/owl-carousel/owl.carousel.min.js"></script> <!-- carousel -->
+
+	<script>
+		$(document).ready(function(){
+
+			/* Carousel */
+	
+			// Находим блок карусели
+			var carousel = $("#carousel");
+
+			// Запускаем плагин карусели
+			carousel.owlCarousel();
+
+			// Назад
+			// При клике на "Назад"
+			$('#js-prev').click(function () {
+
+				// Запускаем перемотку влево
+				carousel.trigger('owl.prev');
+
+				return false;
+			});
+
+			// Вперед
+			// При клике на "Вперед"
+			$('#js-next').click(function () {
+
+				// Запускаем перемотку вправо
+				carousel.trigger('owl.next');
+
+				return false;
+
+			}); 
+
+			/* end carousel */
+
+
+			/* Dop */
+
+			$('#dop').hide();
+
+			$('#all-orders').click(function(){
+				event.preventDefault();
+				$('#dop').slideToggle(400);
+			}); // end click
+
+			/* end dop */
+
+
+			/* Скролл до якоря */
+
+			$('#about-company-btn, #about-company-btn-2, #about-order').click(function () {
+				event.preventDefault();
+				var id  = $(this).attr('href'),
+				    top = $(id).offset().top;
+				$('body,html').animate({scrollTop: top}, 1500, "swing");
+			}); // end click
+
+			$('#orders-btn').click(function () {
+				event.preventDefault();
+				var display = $('#dop').css('display') == 'none';
+				if (!display) {
+						var id  = $('#orders-btn').attr('href'),
+					    	top = $(id).offset().top;
+						$('body,html').animate({scrollTop: top}, 1500, "swing");
+				} else {
+					$('#dop').slideToggle(0, function(){
+						var id  = $('#orders-btn').attr('href'),
+					    	top = $(id).offset().top;
+						$('body,html').animate({scrollTop: top}, 1500, "swing");
+					});
+				}
+				
+			}); // end click
+			
+			/* Конец скролла до якоря */
+
+		}); // end ready
+	</script>
+
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="up-section">
+				<a href="#" class="logo"></a>
+				<div class="menu">
+					<a href="#">Главная</a>
+					<a href="#about-company" id="about-company-btn">О компании</a>
+					<a href="#dop" id="orders-btn">Продукты</a>
+					<a href="#">Партнерам</a>
+					<a href="#">Контакты</a>
+			</div>
+				<div class="user">
+					<a href="#" class="search">Поиск</a>
+					<a href="#" class="language">Язык</a>
+					<a href="#" class="login">Вход</a>
+					<a href="#" class="basket">Корзина</a>
+				</div>
+				</div>
+				<div class="contacts">
+					<p>ул. Пушкина, д. 9</p>
+					<p>8 800 555 3535</p>
+					<p>Пн, Вт, Ср, Чт, Пт</p>
+				</div>
+
+			<div class="center-section">
+				<div class="offer">
+					<h1>Мы позаботимся о вашей безопасности</h1>
+					<p>Компания «Блокпост» – лидер Российского рынка в сфере систем безопасности  </p>
+				</div>
+
+				<div class="form">
+					<h2>Заказать звонок</h2>
+					<form action="">
+						<input type="text" placeholder="Имя">
+						<input type="text" placeholder="Телефон">
+						<input type="text" placeholder="Email">
+						<a href="#" class="btn call">Заказать&nbsp;звонок</a>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</header>
+	<div class="orders">
+		<div class="container">
+
+			<div class="pre-offer">
+				<p class="text">Текст</p>
+				<p class="title inline">Товары</p>
+				<a href="#" id="all-orders">Все товары</a>
+			</div>
+
+			<div class="cards">
+				
+				<div class="card">
+					<div class="img"></div>
+					<p>Болларды</p>
+					<a href="" class="btn more">Узнать больше</a>
+				</div>
+				<div class="card">
+					<div class="img"></div>
+					<p>Болларды</p>
+					<a href="#" class="btn more">Узнать больше</a>
+				</div>
+				<div class="card">
+					<div class="img"></div>
+					<p>Болларды</p>
+					<a href="#" class="btn more">Узнать больше</a>
+				</div>
+				<div class="card">
+					<div class="img"></div>
+					<p>Болларды</p>
+					<a href="#" class="btn more">Узнать больше</a>
+				</div>
+
+			</div>
+
+			<div id="dop" class="dop acsb fxd-c justify flex dop-2">
+
+				<div class="block-dop-1 flex">
+					<a href="#" class="block-dop uppercase"><br>Болларды</a>
+					<a href="#" class="block-dop uppercase"><br>Шиповой барьер</a>
+					<a href="#" class="block-dop uppercase"><br>Ворота</a>
+				</div>
+				<div class="block-dop-2 flex">
+					<a href="#" class="block-dop uppercase"><br>Дорожные блокираторы</a>
+					<a href="#" class="block-dop uppercase"><br>Передвижной покат</a>
+					<a href="#" class="block-dop uppercase">декоративные <br>противотаранные <br>клумбы </a>
+				</div>		
+				<div class="block-dop-3 flex">
+					<a href="#" class="block-dop uppercase"><br>мобильные блокираторы</a>
+					<a href="#" class="block-dop uppercase"><br>шлагбаумы</a>
+					<a href="#" class="block-dop uppercase"><br>Защита остановок</a>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+	<div class="specially">
+		<div class="container">
+
+			<div class="pre-offer">
+				<p class="text" id="about-company">Особенности</p>
+				<p class="title">О компании</p>
+			</div>
+
+			<div class="flex justify">
+
+				<div class="text-col">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi molestias reprehenderit, optio quam eveniet amet praesentium! Doloremque necessitatibus quae nesciunt, sed, iure, tempore tempora maxime at sint ab, similique magni! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi molestias reprehenderit, optio quam eveniet amet praesentium! Doloremque necessitatibus quae nesciunt, sed, iure, tempore tempora maxime at sint ab, similique magni!
+				</div>
+				<div class="text-col">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui accusantium aperiam debitis nulla aliquam harum veniam consequuntur eius cum corporis suscipit velit molestias, fugit repellendus aliquid. Quisquam, recusandae deleniti incidunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi molestias reprehenderit, optio quam eveniet amet praesentium! Doloremque necessitatibus quae nesciunt, sed, iure, tempore tempora maxime at sint ab, similique magni!
+				</div>
+				<div class="text-col">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla aliquid praesentium iste, ducimus eius aliquam quae deleniti, sequi fuga aut, distinctio similique facere odit nobis tempora suscipit fugit neque labore? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi molestias reprehenderit, optio quam eveniet amet praesentium! Doloremque necessitatibus quae nesciunt, sed, iure, tempore tempora maxime at sint ab, similique magni!
+				</div>
+
+			</div>
+
+		<div class="flex justify photo-after-text">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+
+		<div class="pre-offer">
+			<p class="text" id="about-order">Особенности</p>
+			<p class="title">О товаре</p>
+		</div>
+
+		<div class="flex justify">
+
+				<div class="text-col">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi molestias reprehenderit, optio quam eveniet amet praesentium! Doloremque necessitatibus quae nesciunt, sed, iure, tempore tempora maxime at sint ab, similique magni! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi molestias reprehenderit, optio quam eveniet amet praesentium! Doloremque necessitatibus quae nesciunt, sed, iure, tempore tempora maxime at sint ab, similique magni!
+				</div>
+				<div class="text-col">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui accusantium aperiam debitis nulla aliquam harum veniam consequuntur eius cum corporis suscipit velit molestias, fugit repellendus aliquid. Quisquam, recusandae deleniti incidunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi molestias reprehenderit, optio quam eveniet amet praesentium! Doloremque necessitatibus quae nesciunt, sed, iure, tempore tempora maxime at sint ab, similique magni!
+				</div>
+				<div class="text-col">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla aliquid praesentium iste, ducimus eius aliquam quae deleniti, sequi fuga aut, distinctio similique facere odit nobis tempora suscipit fugit neque labore? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi molestias reprehenderit, optio quam eveniet amet praesentium! Doloremque necessitatibus quae nesciunt, sed, iure, tempore tempora maxime at sint ab, similique magni!
+				</div>
+
+			</div>
+
+		<div class="flex justify photo-after-text">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+
+		</div>
+	</div>
+	<div class="us">
+		<div class="container">
+			
+		<div class="pre-offer">
+			<div class="title float-l">
+				<p>Наши клиенты</p>
+			</div>
+			<a href="#">Все клиенты</a>
+		</div>
+
+		<div class="flex justify align-center arrows">
+
+			<a href="#" id="js-prev" class="btn"></a>
+
+			<div id="carousel">
+				<div class="carousel-element uppercase">Центральная избирательная комиссия РФ</div>
+				<div class="carousel-element uppercase">Центральная избирательная комиссия РФ</div>
+				<div class="carousel-element uppercase">Центральная избирательная комиссия РФ</div>
+				<div class="carousel-element uppercase">Центральная избирательная комиссия РФ</div>
+				<div class="carousel-element uppercase">Центральная избирательная комиссия РФ</div>
+				<div class="carousel-element uppercase">Центральная избирательная комиссия РФ</div>
+				<div class="carousel-element uppercase">Центральная избирательная комиссия РФ</div>
+				<div class="carousel-element uppercase">Центральная избирательная комиссия РФ</div>
+				<div class="carousel-element uppercase">Центральная избирательная комиссия РФ</div>
+				<div class="carousel-element uppercase">Центральная избирательная комиссия РФ</div>
+				<div class="carousel-element uppercase">Центральная избирательная комиссия РФ</div>
+				<div class="carousel-element uppercase">Центральная избирательная комиссия РФ</div>
+				<div class="carousel-element uppercase">Центральная избирательная комиссия РФ</div>
+				<div class="carousel-element uppercase">Центральная избирательная комиссия РФ</div>
+			</div>
+
+			<a href="#" id="js-next" class="btn"></a>
+
+		</div>
+
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="container">
+			
+		<div class="text-footer flex justify">
+
+			<div class="block-1 block">
+				<h3 class="title-footer">О нас</h3>
+				<a href="#about-company" id="about-company-btn-2">О компании</a>
+				<a href="#about-order" id="about-order">О товаре</a>
+				<a href="#">Производство</a>
+				<a href="#" class="lower-text text-1">© Блокпост</a>
+			</div>
+
+			<div class="block-2 block">
+				<h3 class="title-footer">Связь с нами</h3>
+				<p href="#">ул.Пушкина, д.9</p>
+				<p href="#">8 800 555 3535</p>
+				<a href="#" class="lower-text text-2">Конфиденциальность</a>
+			</div>
+
+			<div class="block-3 block">
+				<h3 class="title-footer">Поддержка</h3>
+				<a href="#">FAQ</a>
+				<a href="#">Написать</a>
+				<a href="#" class="lower-text text-3">Лицензия</a>
+			</div>
+
+		</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
