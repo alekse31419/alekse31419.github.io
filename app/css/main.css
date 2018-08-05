@@ -52,6 +52,13 @@ body {
 	min-width: 1191px;
 }
 
+@media (max-width: 1200px) {
+	.container {
+		padding: 0;
+		min-width: 980px;
+	}
+}
+
 .inline {
 	display: inline;
 }
