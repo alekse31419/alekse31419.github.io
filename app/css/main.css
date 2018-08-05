@@ -49,14 +49,6 @@ body {
 	width: 100%;
 	margin: 0 auto;
 	padding: 0 156px;
-	min-width: 1191px;
-}
-
-@media (max-width: 1200px) {
-	.container {
-		padding: 0;
-		min-width: 980px;
-	}
 }
 
 .inline {
